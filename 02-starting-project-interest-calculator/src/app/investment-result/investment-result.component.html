@@ -1,0 +1,37 @@
+@if(inputResult.length == 0) {
+<p>Please inout some data to show the results</p>
+} @else {
+<table>
+    <thead>
+        <tr>
+            <th>Year</th>
+            <th>Investment Value</th>
+            <th>Interest (Year)</th>
+            <th>Total Interest</th>
+            <th>Invested Capital</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (result of inputResult; track $index) {
+        <tr>
+            <td>
+                {{result.year | currency: "INR"}}
+            </td>
+            <td>
+                {{result.annualInvestment | currency}}
+            </td>
+            <td>
+                {{result.initialInvestment | currency}}
+            </td>
+            <td>
+                {{result.interest | currency}}
+            </td>
+            <td>
+                {{result.totalAmountInvested | currency}}
+            </td>
+        </tr>
+        }
+
+    </tbody>
+</table>
+}
